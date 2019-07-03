@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Personal finance helper</string>
+    <string name="login_hello">Hello, it\'\s your finance helper!</string>
+    <string name="login_button">Click for enter</string>
+</resources>
