@@ -36,7 +36,7 @@ public class FinanceActivity extends FragmentActivity {
         recyclerView = findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new ListAdapter(List<FinancialOperation> list);
+        adapter = new ListAdapter();
         recyclerView.setAdapter(adapter);
 
         buttonAdd = findViewById(R.id.addNewFinList);
@@ -53,13 +53,20 @@ public class FinanceActivity extends FragmentActivity {
 
 
         String nameOp = getIntent().getStringExtra("name");
-
+        int summOp = 0;
         String typeOp = getIntent().getStringExtra("type");
-        int summOp = Integer.parseInt(getIntent().getStringExtra("summ"));
+        if ((getIntent().getStringExtra("summ")) != null) summOp = Integer.parseInt(getIntent().getStringExtra("summ"));
         String descriptionOp = getIntent().getStringExtra("description");
 
-        FinancialOperation financialOperation = new FinancialOperation(nameOp, typeOp, summOp, descriptionOp);
-        list.add(financialOperation);
+        if (nameOp.equals(null)){
+        }else
+        {
+            FinancialOperation financialOperation = new FinancialOperation(nameOp, typeOp, summOp, descriptionOp){
+        };
+            list.add(financialOperation);
+        }
+
+
 
 
     }
