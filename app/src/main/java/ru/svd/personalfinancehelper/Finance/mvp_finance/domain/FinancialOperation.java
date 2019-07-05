@@ -25,4 +25,20 @@ public class FinancialOperation {
                 ", description='" + description +
                 '}';
     }
+
+    public String getName() {
+        return nameOperation;
+    }
+
+    public String getType() {
+        return typeOperation;
+    }
+
+    public int getSumm() {
+        return summOperation;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

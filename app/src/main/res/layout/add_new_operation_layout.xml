@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Finance.application.AddFinanceOperaionActivity"
+    tools:context=".Finance.application.FinanceActivity"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add new operation"
+        android:text="Новая операция"
         android:textSize="24sp"
         android:layout_marginLeft="100dp"
         android:layout_marginVertical="20dp"
-         />
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:id="@+id/nameOp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name of operation:"
+            android:text="Наименование:"
             android:textSize="16sp"
             android:layout_marginLeft="5dp"/>
 
@@ -34,10 +34,10 @@
             android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
+
             android:ems="10"
-            android:hint="Input name of operation"
-            android:inputType="textPersonName" />
+            android:hint="Введите имя операции"
+             />
     </LinearLayout>
 
     <LinearLayout
@@ -49,7 +49,7 @@
             android:id="@+id/typeOp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Type of operation:"
+            android:text="Тип:"
             android:textSize="16sp"
             android:layout_marginLeft="5dp"/>
 
@@ -57,9 +57,9 @@
             android:id="@+id/editType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
+
             android:ems="10"
-            android:hint="Input type of operation"
+            android:hint="Введите тип операции"
             android:inputType="textPersonName"
             android:layout_marginLeft="9dp"/>
     </LinearLayout>
@@ -73,7 +73,7 @@
             android:id="@+id/summOp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Summ of operation"
+            android:text="Сумма"
             android:textSize="16sp"
             android:layout_marginLeft="5dp"/>
 
@@ -81,9 +81,9 @@
             android:id="@+id/editSumm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
+
             android:ems="10"
-            android:hint="Input summ of operation"
+            android:hint="Введите сумму"
             android:inputType="textPersonName"
             />
     </LinearLayout>
@@ -97,7 +97,7 @@
             android:id="@+id/descriptionOp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
+            android:text="Описание"
             android:textSize="16sp"
             android:layout_marginLeft="5dp"/>
 
@@ -107,11 +107,12 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:autofillHints=""
+            android:hint="Введите описание"
             android:layout_marginLeft="55dp"/>
     </LinearLayout>
 
     <Button
+        android:id="@+id/okButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="255dp"
