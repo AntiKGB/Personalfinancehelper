@@ -9,8 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import ru.svd.personalfinancehelper.Finance.mvp_finance.domain.FinancialOperation;
 import ru.svd.personalfinancehelper.Finance.mvp_finance.domain.interactors.GetOperationListUseCase;
@@ -24,26 +29,33 @@ public class OperationListFragment extends Fragment {
     private RecyclerView recyclerViewList;
     private Button addOp;
     private Button remOp;
+    private TextView textView;
 
-    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        return inflater.inflate(R.layout.finance_list, container, false);
-    }
-
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        View view = inflater.inflate(R.layout.finance_list, container, false);
+ //       operationList = getOperationList();
+ //       ListAdapter listAdapter = new ListAdapter();
+//        recyclerViewList.setAdapter(listAdapter);
+ //       recyclerViewList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        textView = view.findViewById(R.id.rvList);
+        Bundle bundle = getArguments();
+        if (bundle != null) {textView.setText(bundle.getString("newItem"));}
         addOp = view.findViewById(R.id.addNewFinList);
         remOp = view.findViewById(R.id.delFinList);
-        //recyclerViewList = view.findViewById(R.id.infoFin);
+        return view;
     }
 
-    public void setupList(RecyclerView recyclerViewList) {
-        listAdapter = new ListAdapter();
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerViewList.setLayoutManager(layoutManager);
-        recyclerViewList.setAdapter(listAdapter);
-        //presenter.getOperationList();
+    private void addItem() {
+        saveItem();
+    }
+
+    private void saveItem() {
+
+    }
+
+    public List<FinancialOperation> getOperationList() {
+        return null;
     }
 }

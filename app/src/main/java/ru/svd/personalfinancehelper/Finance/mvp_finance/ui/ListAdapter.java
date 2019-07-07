@@ -13,6 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.svd.personalfinancehelper.Finance.OperationList;
 import ru.svd.personalfinancehelper.Finance.mvp_finance.domain.FinancialOperation;
 import ru.svd.personalfinancehelper.R;
 
@@ -20,13 +21,21 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     private List<FinancialOperation> listOperation = new ArrayList<>();
 
     public static class ListViewHolder extends RecyclerView.ViewHolder {
-        private final TextView bodyOperation;
+        public  TextView nameOperation;
+        public   TextView typeOperation;
+        public   TextView summOperation;
+        public  TextView descOperation;
 
         public ListViewHolder(View view){
             super(view);
-            bodyOperation = view.findViewById(R.id.infoFin);
+            nameOperation = view.findViewById(R.id.nameOperation);
+            typeOperation = view.findViewById(R.id.typeOperation);
+            summOperation = view.findViewById(R.id.summOperation);
+            descOperation = view.findViewById(R.id.decrOperation);
         }
     }
+
+
 
     public void setList(List<FinancialOperation> list){
         listOperation.addAll(list);
@@ -47,8 +56,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     @Override
     public void onBindViewHolder(ListViewHolder holder, int position){
-        FinancialOperation financialOperation = listOperation.get(position);
-        holder.bodyOperation.setText(financialOperation.toString());
+
+       // holder.nameOperation.setText();
     }
 
     @Override

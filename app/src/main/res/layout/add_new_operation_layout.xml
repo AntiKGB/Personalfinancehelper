@@ -118,6 +118,7 @@
         android:layout_marginLeft="255dp"
         android:layout_marginTop="20dp"
         android:text="OK"
+        android:onClick="onClick"
         android:background="@color/green"
         android:textColor="@color/white"/>
 

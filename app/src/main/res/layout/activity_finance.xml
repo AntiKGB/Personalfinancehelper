@@ -8,38 +8,13 @@
     android:background="#FFF5EE"
     android:orientation="vertical">
 
-
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/container"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:id="@+id/addNewFinList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="Добавить операцию"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/delFinList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="Удалить операцию"
-            android:layout_weight="1"/>
-
-
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
     </LinearLayout>
 
 
-
-<include layout="@layout/finance_list"/>
 </RelativeLayout>
