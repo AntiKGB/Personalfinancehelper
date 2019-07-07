@@ -21,4 +21,6 @@ public class OperationList {
         list.add(financialOperation);
         return operationList;
     }
+
+
 }

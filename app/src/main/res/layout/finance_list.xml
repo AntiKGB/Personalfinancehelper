@@ -5,16 +5,14 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/rvList">-->
-<!---->
-    <!--</android.support.v7.widget.RecyclerView>-->
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/rvList"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvListView">
+
+    </android.support.v7.widget.RecyclerView>
+
+
 
 
     <LinearLayout

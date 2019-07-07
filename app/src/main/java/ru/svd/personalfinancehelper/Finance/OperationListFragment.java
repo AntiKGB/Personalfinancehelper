@@ -35,13 +35,27 @@ public class OperationListFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         View view = inflater.inflate(R.layout.finance_list, container, false);
- //       operationList = getOperationList();
+ //
  //       ListAdapter listAdapter = new ListAdapter();
 //        recyclerViewList.setAdapter(listAdapter);
  //       recyclerViewList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        textView = view.findViewById(R.id.rvList);
+        //textView = view.findViewById(R.id.rvList);
         Bundle bundle = getArguments();
-        if (bundle != null) {textView.setText(bundle.getString("newItem"));}
+        if (bundle != null) {
+            textView.setText(bundle.getString("newItem"));
+            String nameOp = bundle.getString("name");
+            String typeOp = bundle.getString("type");
+            int summOp = Integer.parseInt(bundle.getString("summ"));
+            String descOP = bundle.getString("description");
+            FinancialOperation financialOperation = new FinancialOperation(nameOp, typeOp, summOp, descOP);
+            operationList.add(financialOperation);
+            recyclerViewList.setAdapter(new ListAdapter());
+        }
+        if (operationList != null) {
+            recyclerViewList = view.findViewById(R.id.rvListView);
+            recyclerViewList.setLayoutManager(new LinearLayoutManager(getActivity()));
+            recyclerViewList.setAdapter(new ListAdapter());
+        }
         addOp = view.findViewById(R.id.addNewFinList);
         remOp = view.findViewById(R.id.delFinList);
         return view;

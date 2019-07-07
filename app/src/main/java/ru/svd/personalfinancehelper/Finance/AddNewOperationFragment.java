@@ -22,7 +22,10 @@ public class AddNewOperationFragment extends Fragment {
     private EditText editType;
     private EditText editSumm;
     private EditText editDescription;
-    public String text;
+    public String nameO;
+    public String typeO;
+    public String summO;
+    public String descO;
     public List<FinancialOperation> list;
 
 
@@ -43,14 +46,17 @@ public class AddNewOperationFragment extends Fragment {
     View.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            text = editName.getText().toString() + ", " +
-                    editType.getText().toString() + ", " +
-                    editSumm.getText().toString() + ", " +
-                    editDescription.getText().toString();
+            nameO = editName.getText().toString();
+            typeO = editType.getText().toString();
+            summO = editSumm.getText().toString();
+            descO = editDescription.getText().toString();
             FragmentTransaction frt = getFragmentManager().beginTransaction();
             OperationListFragment operationListFragment = new OperationListFragment();
             Bundle bundle = new Bundle();
-            bundle.putString("newItem", text);
+            bundle.putString("name", nameO);
+            bundle.putString("type", typeO);
+            bundle.putString("summ", summO);
+            bundle.putString("description", descO);
             operationListFragment.setArguments(bundle);
             frt.replace(R.id.container, operationListFragment);
             frt.isAddToBackStackAllowed();

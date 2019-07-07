@@ -58,7 +58,7 @@ public class FinanceActivity extends FragmentActivity implements NewOperationIsC
                 break;}
             case R.id.okButton: {
 
-                TextView textView = findViewById(R.id.rvList);
+                //TextView textView = findViewById(R.id.rvList);
 
                 EditText editName = view.findViewById(R.id.editName);
                 String nameOp = editName.getText().toString();
@@ -68,7 +68,7 @@ public class FinanceActivity extends FragmentActivity implements NewOperationIsC
                 String summOp = editSumm.getText().toString();
                 EditText editDescription = view.findViewById(R.id.editDescription);
                 String descriptonOp = editDescription.getText().toString();
-                textView.setText("Имя" + nameOp + ", Тип:"+ typeOp + ", Сумма:" + summOp + ", Описание:" + descriptonOp);
+                //textView.setText("Имя" + nameOp + ", Тип:"+ typeOp + ", Сумма:" + summOp + ", Описание:" + descriptonOp);
                 fragmentTransaction.replace(R.id.container, operationListFragment);
                 break;}
 

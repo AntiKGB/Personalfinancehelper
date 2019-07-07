@@ -20,7 +20,7 @@ import ru.svd.personalfinancehelper.R;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
     private List<FinancialOperation> listOperation = new ArrayList<>();
 
-    public static class ListViewHolder extends RecyclerView.ViewHolder {
+    /*public static class ListViewHolder extends RecyclerView.ViewHolder {
         public  TextView nameOperation;
         public   TextView typeOperation;
         public   TextView summOperation;
@@ -67,5 +67,53 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
 
 
+*/
 
+    private List<FinancialOperation> list = new ArrayList<>();
+
+    public void setItems(List<FinancialOperation> listOperation){
+        list.addAll(listOperation);
+        notifyDataSetChanged();
+    }
+
+    public void clearItems(){
+        list.clear();
+        notifyDataSetChanged();
+    }
+
+    public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_layout, parent, false);
+        return new ListViewHolder(view);
+    }
+
+    public void onBindViewHolder(ListViewHolder holder, int position) {
+        FinancialOperation finOp = list.get(position);
+        holder.nameView.setText(finOp.getName());
+        holder.typeView.setText(finOp.getType());
+        holder.summView.setText(finOp.getSumm());
+        holder.descView.setText(finOp.getDescription());
+    }
+
+    public int getItemCount(){
+        return list.size();
+    }
+
+    class ListViewHolder extends RecyclerView.ViewHolder {
+        private TextView nameView;
+        private TextView typeView;
+        private TextView summView;
+        private TextView descView;
+
+
+
+        public ListViewHolder(View itemView) {
+            super(itemView);
+            nameView = itemView.findViewById(R.id.nameOperation);
+            typeView = itemView.findViewById(R.id.typeOperation);
+            summView = itemView.findViewById(R.id.summOperation);
+            descView = itemView.findViewById(R.id.descriptionOp);
+
+        }
+    }
 }
