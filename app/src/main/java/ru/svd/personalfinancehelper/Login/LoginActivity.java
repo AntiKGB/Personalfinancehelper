@@ -1,10 +1,12 @@
 package ru.svd.personalfinancehelper.Login;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import ru.svd.personalfinancehelper.Finance.application.FinanceActivity;
 import ru.svd.personalfinancehelper.R;

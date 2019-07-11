@@ -1,75 +1,79 @@
 package ru.svd.personalfinancehelper.Finance;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import ru.svd.personalfinancehelper.Finance.mvp_finance.domain.FinancialOperation;
-import ru.svd.personalfinancehelper.Finance.mvp_finance.domain.interactors.GetOperationListUseCase;
 import ru.svd.personalfinancehelper.Finance.mvp_finance.ui.ListAdapter;
 import ru.svd.personalfinancehelper.R;
+import rx.Observable;
+import rx.Observer;
+import rx.Single;
+import rx.SingleSubscriber;
+import rx.Subscriber;
 
 public class OperationListFragment extends Fragment {
-    private List<FinancialOperation> operationList;
-    private OperationListPresenter presenter;
+    private List<FinancialOperation> list;
     private ListAdapter listAdapter;
     private RecyclerView recyclerViewList;
     private Button addOp;
     private Button remOp;
-    private TextView textView;
+    private Observer<FinancialOperation> observerOF;
+    private Parcelable recyclerViewState;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         View view = inflater.inflate(R.layout.finance_list, container, false);
- //
- //       ListAdapter listAdapter = new ListAdapter();
-//        recyclerViewList.setAdapter(listAdapter);
- //       recyclerViewList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        //textView = view.findViewById(R.id.rvList);
+        list = new ArrayList<>();
+        listAdapter = new ListAdapter(list);
         Bundle bundle = getArguments();
         if (bundle != null) {
-            textView.setText(bundle.getString("newItem"));
             String nameOp = bundle.getString("name");
             String typeOp = bundle.getString("type");
-            int summOp = Integer.parseInt(bundle.getString("summ"));
-            String descOP = bundle.getString("description");
-            FinancialOperation financialOperation = new FinancialOperation(nameOp, typeOp, summOp, descOP);
-            operationList.add(financialOperation);
-            recyclerViewList.setAdapter(new ListAdapter());
+            String summOp = bundle.getString("summ");
+            String descOp = bundle.getString("description");
+            FinancialOperation financialOperation = new FinancialOperation(nameOp, typeOp, summOp, descOp);
+            newItem(financialOperation);
         }
-        if (operationList != null) {
-            recyclerViewList = view.findViewById(R.id.rvListView);
-            recyclerViewList.setLayoutManager(new LinearLayoutManager(getActivity()));
-            recyclerViewList.setAdapter(new ListAdapter());
-        }
-        addOp = view.findViewById(R.id.addNewFinList);
-        remOp = view.findViewById(R.id.delFinList);
+
+        listAdapter.setItems(list);
+        recyclerViewList = view.findViewById(R.id.rvListView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerViewList.setLayoutManager(layoutManager);
+        recyclerViewList.setAdapter(listAdapter);
+        listAdapter.notifyDataSetChanged();
+        recyclerViewState = recyclerViewList.getLayoutManager().onSaveInstanceState();
         return view;
     }
 
-    private void addItem() {
-        saveItem();
-    }
 
-    private void saveItem() {
+    private List<FinancialOperation> newItem(FinancialOperation operation){
 
-    }
+        Single.just(operation)
+                .subscribe(new SingleSubscriber<FinancialOperation>() {
+                    @Override
+                    public void onSuccess(FinancialOperation operation) {
+                        list.add(operation);
+                    }
 
-    public List<FinancialOperation> getOperationList() {
-        return null;
+                    @Override
+                    public void onError(Throwable error) {
+
+                    }
+                });
+        return list;
     }
 }

@@ -81,6 +81,7 @@
             android:id="@+id/editSumm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:digits="0123456789."
 
             android:ems="10"
             android:hint="Введите сумму"
