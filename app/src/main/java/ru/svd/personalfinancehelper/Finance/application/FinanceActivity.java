@@ -39,7 +39,7 @@ public class FinanceActivity extends FragmentActivity {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container, operationListFragment);
-        fragmentTransaction.commit();
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
 
@@ -54,7 +54,7 @@ public class FinanceActivity extends FragmentActivity {
                 fragmentTransaction.replace(R.id.container, operationListFragment);
                 break;}
         }
-        fragmentTransaction.commit();
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
 

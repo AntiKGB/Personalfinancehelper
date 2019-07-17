@@ -5,119 +5,124 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Finance.application.FinanceActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="50dp">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Новая операция"
+        android:text="@string/new_operation"
         android:textSize="24sp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginVertical="20dp"
+        android:paddingLeft="250dp"
+        android:paddingTop="20dp"
         />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
 
         <TextView
             android:id="@+id/nameOp"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Наименование:"
+            android:text="@string/name_operation"
             android:textSize="16sp"
-            android:layout_marginLeft="5dp"/>
+            />
 
         <EditText
             android:id="@+id/editName"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
-
             android:ems="10"
-            android:hint="Введите имя операции"
-             />
+            android:hint="@string/name_operation_hint" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
 
         <TextView
             android:id="@+id/typeOp"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:text="Тип:"
+            android:text="@string/type_operation"
             android:textSize="16sp"
             android:layout_marginLeft="5dp"/>
 
         <EditText
             android:id="@+id/editType"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
-
+            android:layout_marginLeft="9dp"
             android:ems="10"
-            android:hint="Введите тип операции"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="9dp"/>
+            android:hint="@string/type_operation_hint"
+            android:inputType="textPersonName" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
 
         <TextView
             android:id="@+id/summOp"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Сумма"
+            android:text="@string/summ_operation"
             android:textSize="16sp"
             android:layout_marginLeft="5dp"/>
 
         <EditText
             android:id="@+id/editSumm"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
+            android:digits="0123456789."
 
             android:ems="10"
-            android:hint="Введите сумму"
+            android:hint="@string/summ_operation_hint"
             android:inputType="textPersonName"
-            />
+            android:paddingRight="50dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
 
         <TextView
             android:id="@+id/descriptionOp"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Описание"
+            android:text="@string/description_operation"
             android:textSize="16sp"
             android:layout_marginLeft="5dp"/>
 
         <EditText
             android:id="@+id/editDescription"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
+
             android:ems="10"
+            android:hint="@string/description_operation_hint"
             android:inputType="textPersonName"
-            android:hint="Введите описание"
-            android:layout_marginLeft="55dp"/>
+            android:paddingRight="50dp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/okButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="255dp"
+        android:layout_marginLeft="500dp"
         android:layout_marginTop="20dp"
-        android:text="OK"
+        android:text="@string/ok_button"
+        android:onClick="onClick"
         android:background="@color/green"
         android:textColor="@color/white"/>
 

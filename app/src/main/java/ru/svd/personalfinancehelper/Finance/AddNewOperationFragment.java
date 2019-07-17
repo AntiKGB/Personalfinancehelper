@@ -2,6 +2,7 @@ package ru.svd.personalfinancehelper.Finance;
 
 import android.os.Bundle;
 
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class AddNewOperationFragment extends Fragment {
         editName = viewANI.findViewById(R.id.editName);
         editType = viewANI.findViewById(R.id.editType);
         editSumm = viewANI.findViewById(R.id.editSumm);
+        editSumm.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL);
         editDescription = viewANI.findViewById(R.id.editDescription);
         btnOk = viewANI.findViewById(R.id.okButton);
         btnOk.setOnClickListener(mClickListener);

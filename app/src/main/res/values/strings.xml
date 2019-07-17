@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Personal finance helper</string>
-    <string name="login_hello">Hello, it\'\s your finance helper!</string>
-    <string name="login_button">Click for enter</string>
+    <string name="add_operation">Add operation</string>
+    <string name="remove_operation">Remove operation</string>
+    <string name="new_operation">New operation</string>
+    <string name="name_operation">Name:</string>
+    <string name="name_operation_hint">Input name of operation</string>
+    <string name="type_operation">Type:</string>
+    <string name="type_operation_hint">Input type of operation</string>
+    <string name="summ_operation">Summ:</string>
+    <string name="summ_operation_hint">Input summ of operation</string>
+    <string name="description_operation">Description:</string>
+    <string name="description_operation_hint">Input description of operation</string>
+    <string name="ok_button">OK</string>
+
 </resources>

@@ -1,9 +1,7 @@
 package ru.svd.personalfinancehelper.Finance.mvp_finance.domain;
 
-import dagger.Module;
-import dagger.Provides;
 
-@Module
+
 public class FinancialOperation {
     private String nameOperation;
     private String typeOperation;
@@ -16,6 +14,7 @@ public class FinancialOperation {
         this.summOperation = summOperation;
         this.description = description;
     }
+
 
 
     public String toString(){
@@ -49,6 +48,7 @@ public class FinancialOperation {
     }
 
     public String getDescription() { return description; }
+
     public void setDescription(String description) {
         this.description = description;
     }

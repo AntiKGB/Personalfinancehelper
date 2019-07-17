@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Личный финансовый помошник</string>
+    <string name="add_operation">Добавить операцию</string>
+    <string name="description_operation">Описание:</string>
+    <string name="description_operation_hint">Введите описание операции</string>
+    <string name="login_button">Нажмите для входа</string>
+    <string name="login_hello">Привет, это твой финансовый помошник!</string>
+    <string name="name_operation">Имя:</string>
+    <string name="name_operation_hint">Введите имя операции</string>
+    <string name="new_operation">Новая операция</string>
+    <string name="ok_button">ОК</string>
+    <string name="remove_operation">Удалить операцию</string>
+    <string name="summ_operation">Сумма:</string>
+    <string name="summ_operation_hint">Введите сумму операции</string>
+    <string name="type_operation">Тип:</string>
+    <string name="type_operation_hint">Введите тип операции</string>
+</resources>

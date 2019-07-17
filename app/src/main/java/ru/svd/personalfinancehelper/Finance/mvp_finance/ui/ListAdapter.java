@@ -23,7 +23,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     }
 
 
-    public void setItems(List<FinancialOperation> listOperation){
+    /*public void setItems(List<FinancialOperation> listOperation){
         list.addAll(listOperation);
         notifyDataSetChanged();
     }
@@ -31,7 +31,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     public void clearItems(){
         list.clear();
         notifyDataSetChanged();
-    }
+    }*/
 
     public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View view = LayoutInflater.from(parent.getContext())
@@ -55,7 +55,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         private TextView typeView;
         private TextView summView;
         private TextView descView;
-        private FinancialOperation fOperation;
+
 
 
 
@@ -64,15 +64,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
             nameView = itemView.findViewById(R.id.nameOperation);
             typeView = itemView.findViewById(R.id.typeOperation);
             summView = itemView.findViewById(R.id.summOperation);
-            descView = itemView.findViewById(R.id.descriptionOp);
+            descView = itemView.findViewById(R.id.decrOperation);
         }
 
         public void bind(FinancialOperation operation){
-            fOperation = operation;
-            nameView.setText(fOperation.getName());
-            typeView.setText(fOperation.getType());
-            summView.setText(fOperation.getSumm());
-//            descView.setText(fOperation.getDescription());
+            nameView.setText(operation.getName());
+            typeView.setText(operation.getType());
+            summView.setText(operation.getSumm());
+            descView.setText(operation.getDescription());
         }
     }
 }
