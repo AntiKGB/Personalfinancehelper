@@ -7,20 +7,19 @@ import rx.Observable;
 import rx.Scheduler;
 import rx.schedulers.Schedulers;
 
-public class GetOperationListUseCase extends Observable<List<FinancialOperation>> {
+public class GetOperationListUseCase(
+        List<FinancialOperation list>)
+        ) {
+
+    private final Object List;
+    private List<FinancialOperation>;
 
 
+    public getOperationList(){
 
-    private List<FinancialOperation> list;
+    return Observable.defer( () ->
+            Observable.just( List<FinancialOperation> ))
+    Observable<List<FinancialOperation>> rxList = Observable.just( List<FinancialOperation> )
 
-
-
-
-    protected List<FinancialOperation> GetOperationListUseCase() {
-        return Observable.defer(() -> (
-                return Observable.just( list ));
-
-    }
-
-    protected Observable<List<>>
+}
 }
